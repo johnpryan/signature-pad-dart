@@ -51,7 +51,7 @@ class SignaturePadPainter extends CustomPainter {
 
     var picture = recorder.endRecording();
     var image =
-        picture.toImage(lastSize.width.round(), lastSize.height.round());
+        await picture.toImage(lastSize.width.round(), lastSize.height.round());
     ByteData data = await image.toByteData(format: ui.ImageByteFormat.png);
     return data.buffer.asUint8List();
   }
